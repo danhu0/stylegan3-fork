@@ -1,0 +1,52 @@
+Loading training set...
+/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/utils/data/sampler.py:68: UserWarning: `data_source` argument is not used and will be removed in 2.2.0.You may still have custom implementation that utilizes it.
+  warnings.warn(
+/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/utils/data/dataloader.py:683: UserWarning: 'pin_memory' argument is set as true but not supported on MPS now, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+
+Num images:  2658
+Image shape: [3, 1024, 1024]
+Label shape: [0]
+
+Constructing networks...
+Traceback (most recent call last):
+  File "/Users/danielhu/Documents/VSCode/stylegan3-fork/train.py", line 286, in <module>
+    main() # pylint: disable=no-value-for-parameter
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/click/core.py", line 1161, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/danielhu/Documents/VSCode/stylegan3-fork/train.py", line 281, in main
+    launch_training(c=c, desc=desc, outdir=opts.outdir, dry_run=opts.dry_run)
+  File "/Users/danielhu/Documents/VSCode/stylegan3-fork/train.py", line 96, in launch_training
+    subprocess_fn(rank=0, c=c, temp_dir=temp_dir)
+  File "/Users/danielhu/Documents/VSCode/stylegan3-fork/train.py", line 47, in subprocess_fn
+    training_loop.training_loop(rank=rank, **c)
+  File "/Users/danielhu/Documents/VSCode/stylegan3-fork/training/training_loop.py", line 152, in training_loop
+    G = dnnlib.util.construct_class_by_name(**G_kwargs, **common_kwargs).train().requires_grad_(False).to(device) # subclass of torch.nn.Module
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1355, in to
+    return self._apply(convert)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/nn/modules/module.py", line 915, in _apply
+    module._apply(fn)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/nn/modules/module.py", line 942, in _apply
+    param_applied = fn(param)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1341, in convert
+    return t.to(
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/cuda/__init__.py", line 363, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+  File "/Users/danielhu/miniconda3/envs/csci1430/lib/python3.9/site-packages/torch/utils/data/_utils/signal_handling.py", line 73, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 71528) is killed by signal: Terminated: 15. 

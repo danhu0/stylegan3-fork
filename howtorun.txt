@@ -1,0 +1,4 @@
+python train.py --outdir=./training-runs --cfg=stylegan3-r \
+  --data=fish_dataset_1024.zip \
+  --gpus=1 --batch=4 --gamma=8.2 --mirror=1 \
+  --resume=./pretrained/stylegan3-r-ffhqu-1024x1024.pkl
